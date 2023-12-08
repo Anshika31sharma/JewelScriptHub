@@ -13,8 +13,8 @@ export default {
       },
       keyframes: {
         wiggle: {
-          "0%,100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" },
+          "100%,100%": { transform: "rotate(-50deg)" },
+          "100%": { transform: "rotate(10deg)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
@@ -26,9 +26,9 @@ export default {
         },
       },
       animation: {
-        wiggle: "wiggle 1s ease-in-out infinite",
-        float: "float 4s ease-in-out infinite",
-        fadeIn: "fadeIn 1s ease-in-out",
+        wiggle: "wiggle 0.5s ease-in-out infinite", // Adjusted duration to 0.5s
+        float: "float 2s ease-in-out infinite",   // Adjusted duration to 2s
+        fadeIn: "fadeIn 0.5s ease-in-out",        // Adjusted duration to 0.5s
       },
     },
   },
