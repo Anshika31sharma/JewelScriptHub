@@ -4,11 +4,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 
 const ROUTES = [
-  "Home",
-  "All",
-  "Types",
-  "Pricing",
-  "Contact",
+  // "Home",
+  // "All",
+  // "Types",
+  // "Pricing",
+  // "Contact",
 ];
 export function Nav({ onClickShoppingBtn }) {
   const [isMobileMenuShown, setIsMobileMenuShown] =

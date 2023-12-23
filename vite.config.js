@@ -7,5 +7,12 @@ export default defineConfig({
   plugins: [react(), svgr()],
   server: {
     port: 3000,
+    proxy: {
+      '/api': 'http://localhost:8000', // Replace with your Django backend URL
+    },
+    esbuild: {
+      jsxFactory: 'h',
+      jsxFragment: 'Fragment',
+    },
   },
 });

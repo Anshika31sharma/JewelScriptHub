@@ -6,6 +6,7 @@ import { Sidebar } from "./components/Sidebar";
 import { SHOE_LIST } from "./constant";
 import { Cart } from "./components/Cart";
 import { BiMoon, BiSun } from "react-icons/bi";
+import ProductList from './ProductList';
 
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -55,22 +56,17 @@ export function App() {
 
   return (
     <div className="animate-fadeIn p-10 dark:bg-night xl:px-24">
+      <div><ProductList />
+      <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
       <Detail shoe={currentShoe} onClickAdd={addToCart} />
-      <NewArrivalsSection
-        items={SHOE_LIST}
-        onClickCard={setCurrentShoe}
-      />
       <Sidebar
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart
-          cartItems={cartItems}
-          onClickTrash={removeFromCart}
-        />
+        <Cart cartItems={cartItems} onClickTrash={removeFromCart} />
       </Sidebar>
-      <div className=" fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4">
         <button
           onClick={toggleDarkMode}
           className="rounded-full bg-night-50 px-4 py-2 text-white shadow-lg dark:bg-white dark:text-night"
@@ -79,6 +75,7 @@ export function App() {
           <BiMoon className="dark:hidden" />
         </button>
       </div>
+    </div>
     </div>
   );
 }
